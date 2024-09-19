@@ -6,20 +6,20 @@ import { isValidEmail, isValidPassword } from '../utils/regex.jsx';
 import '../sass/components/_Form.scss';
 
 function Form () {
-    /* Allows you to retrieve the data entered by the user in the form */
+    /* Permet de récupérer les données saisies par l'utilisateur dans le formulaire */
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [rememberMe, setRememberMe] = useState(false);
-    /* Indicates an error message if data is invalid */
+    /* Indique un message d'erreur si les données ne sont pas valides */
     const [errorMessage, setErrorMessage] = useState('');
 
     const navigate = useNavigate();
     const dispatch = useDispatch();
 
-    /* Asynchronous form function */
+    /* Fonction de formulaire asynchrone */
     const handleSubmit = async (event) => {
         event.preventDefault();
-        /* Handle error message */
+        /* Gérer le message d'erreur*/
         if (!isValidEmail(email)) {
             setErrorMessage("Invalid email adress");
             return;
@@ -39,8 +39,8 @@ function Form () {
             if (response.ok) {
                 const data = await response.json();
                 /* 
-                    Checking that the query response is indeed retrieved
-                    console.log(data) 
+                    Vérifier que la réponse à la requête est bien récupérée
+                    console.log(données) 
                 */
                 const token = data.body.token;
                 dispatch(loginSuccess(token));

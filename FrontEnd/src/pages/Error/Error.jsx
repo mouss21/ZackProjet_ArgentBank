@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import GreenError from '../../assets/images/404-green.webp';
 import '../../sass/pages/_Error.scss';
 
-/* Error page if user uses unknown route */
+/* Page d'erreur si l'utilisateur utilise un itinéraire inconnu */
 function Error () {
     return (
         <div className="error-page">

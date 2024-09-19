@@ -1,7 +1,7 @@
 import React from 'react'
 import '../sass/components/_Account.scss';
 
-/* Component function that returns a user's account */
+/* Fonction de composant qui renvoie le compte d'un utilisateur */
 function Account ({ title, amount, description }) {
     return (
         <section className='account'>

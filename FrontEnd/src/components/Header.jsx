@@ -7,10 +7,10 @@ import { updateUsername } from '../redux/actions/user.actions.jsx';
 import '../sass/components/_Header.scss';
 
 function Header () {
-    /* Updates user data on header component from state redux */
+    /* Met à jour les données utilisateur sur le composant d'en-tête à partir du redux d'état */
     const isConnected = useSelector((state) => state.auth.token);
     const userData = useSelector((state) => state.user.userData);
-    /* Manages the appearance of the username modification form */
+    /* Gère l'apparence du formulaire de modification du nom d'utilisateur*/
     const [display, setDisplay] = useState(true);
    
      

@@ -1,6 +1,6 @@
 import { LOGIN_SUCCESS, LOGIN_FAIL, LOGOUT } from "../actions/type.actions";
 
-/* Initial state of authentication */
+/* État initial de l'authentification */
 const initialState = {
     status: "VOID",
     isConnected: false,
