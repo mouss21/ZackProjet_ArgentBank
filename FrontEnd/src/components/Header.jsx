@@ -1,16 +1,15 @@
-import React, { useState } from 'react';
+import React, {} from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
 import Logo from '../assets/images/argentBankLogo.webp';
 import { logout } from '../redux/actions/auth.actions';
-import { updateUsername } from '../redux/actions/user.actions.jsx';
 import '../sass/components/_Header.scss';
 
 function Header () {
     /* Met à jour les données utilisateur sur le composant d'en-tête à partir du redux d'état */
     const isConnected = useSelector((state) => state.auth.token);
     const userData = useSelector((state) => state.user.userData);
-   
+ 
    
      
     
