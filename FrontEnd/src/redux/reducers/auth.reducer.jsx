@@ -1,10 +1,12 @@
 import { LOGIN_SUCCESS, LOGIN_FAIL, LOGOUT } from "../actions/type.actions";
 
+const token = localStorage.getItem("token") || sessionStorage.getItem("token") 
+
 /* État initial de l'authentification */
 const initialState = {
     status: "VOID",
-    isConnected: false,
-    token: null,
+    isConnected: !!token,
+    token: token || null,
     error: null,
 }
 
@@ -28,7 +30,15 @@ export const authReducer = (state = initialState, action) => {
             }
         }  
         case LOGOUT: {
-            return initialState;
+            localStorage.removeItem("token")
+            return {
+                ...state,
+                status: "LOGOUT",
+                isConnected:false,
+                token:null,
+                error: null,
+
+            };
         }  
         default:
             return state;

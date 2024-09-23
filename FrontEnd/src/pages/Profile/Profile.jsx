@@ -22,8 +22,9 @@ function UserProfile () {
                             'Authorization': `Bearer ${token}`,
                         },
                     });
+                    const data = await response.json();
                     if (response.ok) {
-                        const data = await response.json();
+                       
                         /* 
                             Vérifier que la réponse à la requête est bien récupérée
                             console.log(données)

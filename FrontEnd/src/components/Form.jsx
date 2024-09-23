@@ -36,8 +36,10 @@ function Form () {
                 },
                 body: JSON.stringify({email, password}),
             });
+            const data = await response.json();
+
             if (response.ok) {
-                const data = await response.json();
+                
                 /* 
                     Vérifier que la réponse à la requête est bien récupérée
                     console.log(données) 
@@ -50,10 +52,11 @@ function Form () {
                 }
                 navigate('/profile');
             } else {
-                const error = "Incorrect email/password"
-                dispatch(loginFailed(error));
+                
+                setErrorMessage(data?.message || "incorrect email or password");
             }
         } catch (error) {
+            dispatch(loginFailed(error));
             console.error(error);
         }
     }
